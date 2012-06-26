@@ -1,0 +1,46 @@
+#video_canvas {
+	margin:50px auto;
+	position:relative;
+	width:960px;
+	background:#ffffff;
+	height:417px;
+	overflow:hidden;
+}
+
+#video_wrapper {
+	float:left;
+}
+
+#video_pane {
+	float:right;
+	width:220px;
+}
+
+#video_pane, #video_pane ul, #video_pane ul li, #video_pane ul li a {
+	margin:0;
+	padding:0;
+	border:none;
+	outline:none;
+}
+
+#video_pane ul {
+	list-style:none;
+}
+
+div#video_pane ul li {
+	z-index: 999;
+	border:none;
+	outline:none;
+}
+
+#video_pane ul li a:hover {
+	background:#D6D6D6;
+}
+
+.preview_video, .preview_poster {
+	position:absolute;
+}
+
+.preview_poster {
+	z-index:99;
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jquery-videojs-playlist | MWFire</title>
+
+  <link href="http://vjs.zencdn.net/c/video-js.css" rel="stylesheet">
+  <link href="css/jquery-videojs-playlist.css" rel="stylesheet">
+  
+  <!-- video.js must be in the <head> for older IEs to work. -->
+  <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+  <script src="http://vjs.zencdn.net/c/video.js"></script>
+  <script src="js/jquery-videojs-playlist.js" type="text/javascript"></script>
+   
+<style type="text/css">
+body { background: #F0F0F0; }
+</style>
+
+</head>
+
+<body>
+
+<!-- This is the default structure for main video and playlist -->
+<!-- Not necessarely wrapped in #video_canvas, it can be seperated -->
+<div id="video_canvas">
+	<div id="video_wrapper"></div>
+    <div id="video_pane"></div>
+</div>
+
+<script>
+$(document).ready(function() {
+	
+	// create a new instance of the plugin
+    var myvideojsplaylist = new $.videojsPlaylist({
+		
+			// Possible settings (defaults):	
+			// write HTML to DOM?
+			write_tags 		:	true,
+			// path to video files
+			video_folder 	: 	"", 
+			// div container of the main video
+			video_div_id 	: 	"video_wrapper",
+			// div container of the preview videos
+			playlist_div_id : 	"video_pane",
+			// main video width
+			video_width 	: 	"740",
+			// main video height
+			video_height 	: 	"417",
+			// should main video start on load?
+			video_autoplay 	: 	false,
+			// preview videos width
+			preview_width 	: 	"220",
+			// preview videos height
+			preview_height 	: 	"139",
+			// should preview videos preload?
+			preview_preload : 	false,
+			// should preview videos loop?
+			preview_loop	: 	true,
+			// volume of preview videos?
+			preview_volume 	: 	0,
+			// should preview video be replaced with current main video?
+			preview_replace : 	true,
+			// where to start with the preview video playlist.
+			// set to 1 as main video (offset 0) is already main video
+			preview_offset	:	1
+	});
+	
+   // feed the videos to the playlist. Must be an array, therefore [], no suffix
+   // note: First Video will be initially shown
+   myvideojsplaylist.initVideos( ['Movie1', 'Movie2', 'Movie3', 'Movie4'] );
+   
+});
+</script>
+
+</body>
+</html>
